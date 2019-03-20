@@ -29,7 +29,7 @@ namespace SavingData
             using (var contextFirst = new BloggingContext())
             {
                 blog = contextFirst.Blogs.First();
-                blog.Url = "http://sample.com/disconnectedReload";       
+                blog.Url = "http://sample.com/SavingDataDisconnected";       
             }
             using (var contextSecond = new BloggingContext())
             {
@@ -47,7 +47,7 @@ namespace SavingData
             using (var contextFirst = new BloggingContext())
             {
                 blog = contextFirst.Blogs.First();
-                blog.Url = "http://sample.com/disconnectedUpdate";
+                blog.Url = "http://sample.com/UpdateDisconnected";
             }
             using (var contextSecond = new BloggingContext())
             {
@@ -63,7 +63,7 @@ namespace SavingData
             using (var contextFirst = new BloggingContext())
             {
                 blog = contextFirst.Blogs.Include(p => p.Posts).ThenInclude(pt => pt.Tags).Include(p => p.Owner).ThenInclude(pp => pp.Photo).First();
-                blog.Url = "http://sample.com/disconnectedGraphUpdate";
+                blog.Url = "http://sample.com/UpdateGraphDisconnected";
 
             }
             using (var contextSecond = new BloggingContext())
@@ -82,7 +82,7 @@ namespace SavingData
             {
                 blog = contextFirst.Blogs.Include(p => p.Posts).ThenInclude(pt => pt.Tags).Include(p => p.Owner).ThenInclude(pp => pp.Photo).First();
 
-                blog.Url = "http://sample.com/disconnectedAttach";
+                blog.Url = "http://sample.com/AttachGraphDisconnected";
             }
             using (var contextSecond = new BloggingContext())
             {
